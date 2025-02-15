@@ -1,6 +1,7 @@
 pub mod arguments_optional;
 pub mod binary_agents;
 pub mod convert_html_entities;
+pub mod diff_two_arrays;
 pub mod drop_it;
 pub mod everything_be_true;
 pub mod make_a_person;
