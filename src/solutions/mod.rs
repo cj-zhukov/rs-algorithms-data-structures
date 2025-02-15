@@ -13,4 +13,5 @@ pub mod search_and_replace;
 pub mod seek_and_destroy;
 pub mod smallest_common_multiple;
 pub mod sorted_union;
+pub mod spinal_tab_case;
 pub mod steamroller;
