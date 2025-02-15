@@ -16,3 +16,4 @@ pub mod sorted_union;
 pub mod spinal_tab_case;
 pub mod steamroller;
 pub mod sum_all_numbers_in_range;
+pub mod sum_all_primes;
