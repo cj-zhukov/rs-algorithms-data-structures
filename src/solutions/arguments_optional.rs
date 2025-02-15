@@ -11,7 +11,6 @@
 //
 // If either argument isn't a valid number, return undefined.
 
-
 pub fn curry(a: i32) -> impl Fn(i32) -> i32 {
     move |x| a + x
 }

@@ -4,7 +4,7 @@
 // Note: You can return the array with its elements in any order.
 
 pub fn diff_array<'a>(mut arr1: Vec<&'a str>, arr2: Vec<&'a str>) -> Vec<&'a str> {
-    // Check if arr1 contains strings of arr2, 
+    // Check if arr1 contains strings of arr2,
     // if it does delete the string, else push it
     for el in arr2 {
         if arr1.contains(&el) {

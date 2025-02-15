@@ -18,3 +18,4 @@ pub mod steamroller;
 pub mod sum_all_numbers_in_range;
 pub mod sum_all_primes;
 pub mod sum_odd_fibonacci_numbers;
+pub mod wherefore_art_thou;
