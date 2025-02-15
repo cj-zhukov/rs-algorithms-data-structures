@@ -8,4 +8,5 @@ pub mod everything_be_true;
 pub mod make_a_person;
 pub mod map_the_debris;
 pub mod missing_letters;
+pub mod pig_latin;
 pub mod steamroller;
