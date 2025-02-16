@@ -18,9 +18,8 @@ pub fn my_replace(s: &str, before: &str, after: &str) -> String {
     // If it is capital then capitalize first letter of after too
     if re.is_match(before) {
         after = first_to_upper(&after);
-    }
-    // Else if the "before" is lowercase and "after" is uppercase just make "after" lowercase too
-    else if !re.is_match(before) && re.is_match(&after) {
+    } else if !re.is_match(before) && re.is_match(&after) {
+        // Else if the "before" is lowercase and "after" is uppercase just make "after" lowercase too
         after = after.to_lowercase();
     }
     // Replacing "before" with "after" and returning the String
