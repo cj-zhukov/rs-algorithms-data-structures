@@ -18,6 +18,21 @@ pub fn diff_array<'a>(mut arr1: Vec<&'a str>, arr2: Vec<&'a str>) -> Vec<&'a str
     arr1
 }
 
+pub fn diff_array2<'a>(arr1: Vec<&'a str>, arr2: Vec<&'a str>) -> Vec<&'a str> {
+    let mut res = vec![];
+    for el in arr1.iter() {
+        if !arr2.contains(&el) {
+            res.push(*el);
+        }
+    }
+    for el in arr2.iter() {
+        if !arr1.contains(&el) {
+            res.push(*el);
+        }
+    }
+    res
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -50,5 +65,12 @@ mod tests {
         let arr1 = vec!["andesite", "grass", "dirt", "dead shrub"];
         let arr2 = vec!["andesite", "grass", "dirt", "dead shrub"];
         assert_eq!(diff_array(arr1, arr2).len(), 0);
+    }
+
+    #[test]
+    fn test4() {
+        let arr1 = vec!["foo", "bar"];
+        let arr2 = vec!["bar", "baz"];
+        assert_eq!(diff_array2(arr1, arr2), ["foo", "baz"]);
     }
 }
