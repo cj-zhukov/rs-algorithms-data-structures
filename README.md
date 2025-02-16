@@ -9,4 +9,5 @@ Rust exercises for code interview
 ### Arfan Zubi CSES Problem Set
 - cses: https://cses.fi/problemset/list/
 - code: https://github.com/3rfaan/cses/tree/main/src
-- video: https://youtu.be/gN0knvL-EHY?si=JYPIljagCwzb42Kc
+- video part1: https://youtu.be/gN0knvL-EHY?si=JYPIljagCwzb42Kc
+- video part2: https://youtu.be/4NPut7uFE78?si=qpdhCk14MM3CQIEi
