@@ -12,13 +12,12 @@ use regex::Regex;
 pub fn translate_pig_latin(s: String) -> String {
     let re = Regex::new(r"^[aeiou]+").unwrap();
     let mut res = String::new();
-    // If s starts with vowel, push to result string and add "way" at the end
     if re.is_match(&s) {
+        // If s starts with vowel, push to result string and add "way" at the end
         let new_str = format!("{}way", &s);
         res.push_str(&new_str);
     } else {
-        // If starting with consonant(s) then taking the consonant(s) and putting them at the end,
-        // then adding "ay"
+        // If starting with consonant(s) then taking the consonant(s) and putting them at the end, then adding "ay"
         let re = Regex::new(r"(^[^aeiou]+)(\w*)").unwrap();
         res = re.replace(&s, "${2}${1}ay").to_string();
     }
