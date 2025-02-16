@@ -8,13 +8,13 @@
 
 pub fn unite_unique(arr: Vec<Vec<i32>>) -> Vec<i32> {
     let arr: Vec<i32> = arr.into_iter().flatten().collect();
-    let mut result = vec![];
+    let mut res = vec![];
     for num in arr {
-        if !result.contains(&num) {
-            result.push(num);
+        if !res.contains(&num) {
+            res.push(num);
         }
     }
-    result
+    res
 }
 
 #[cfg(test)]
