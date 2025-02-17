@@ -1,3 +1,4 @@
+pub mod apple_division;
 pub mod bit_strings;
 pub mod coin_piles;
 pub mod creating_strings;
