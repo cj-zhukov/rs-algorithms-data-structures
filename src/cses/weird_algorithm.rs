@@ -15,7 +15,6 @@ pub fn weird_algorithm(input: u64) -> Vec<u64> {
             n = n * 3 + 1;
             res.push(n);
         }
-        dbg!(n);
     }
     res
 }
