@@ -8,6 +8,7 @@ pub fn drop_vals<F>(arr: &mut Vec<i32>, filter: F) -> Vec<i32>
 where
     F: Fn(&i32) -> bool,
 {
+    arr.sort();
     for (i, val) in arr.iter().enumerate() {
         if filter(val) {
             return arr[i..].to_vec();
@@ -21,8 +22,14 @@ mod tests {
     use super::*;
 
     #[test]
-    fn drop_vals_test() {
+    fn drop_vals_test1() {
         let res = drop_vals(&mut vec![1, 2, 3], |&n| n > 2);
+        assert_eq!(res, vec![3]);
+    }
+
+    #[test]
+    fn drop_vals_test2() {
+        let res = drop_vals(&mut vec![3, 2, 1], |&n| n > 2);
         assert_eq!(res, vec![3]);
     }
 }
