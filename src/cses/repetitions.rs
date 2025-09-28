@@ -6,6 +6,8 @@
 // Output
 // Print one integer: the length of the longest repetition.
 
+use std::collections::HashMap;
+
 pub fn repetitions(s: &str) -> i32 {
     let mut dna = s.chars().peekable();
     let mut cnt = 1;
@@ -21,23 +23,14 @@ pub fn repetitions(s: &str) -> i32 {
     max
 }
 
-// not accurate, because it counts all elements in str
-// pub fn repetitions(s: &str) -> i32 {
-//     let mut map = HashMap::new();
-//     for el in s.chars() {
-//         match map.get_mut(&el) {
-//             Some(v) => *v += 1,
-//             None => {
-//                 let _v = map.insert(el, 1);
-//             }
-//         }
-//     }
-//     let max_val = map
-//         .iter()
-//         .max_by(|a, b| a.1.cmp(&b.1))
-//         .map(|(k, v)| (k, v));
-//     max_val.unwrap().1.clone()
-// }
+pub fn repetitions2(input: &str) -> usize {
+    let input: Vec<char> = input.chars().collect();
+    let mut res = HashMap::new();
+    for c in input {   
+        *res.entry(c).or_insert(0) += 1;
+    }
+    res.values().cloned().max().unwrap_or(0)
+}
 
 #[cfg(test)]
 mod tests {
@@ -46,5 +39,10 @@ mod tests {
     #[test]
     fn repetitions_test() {
         assert_eq!(repetitions("ATTCGGGA"), 3);
+    }
+
+    #[test]
+    fn repetitions_test2() {
+        assert_eq!(repetitions2("ATTCGGGA"), 3);
     }
 }
