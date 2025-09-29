@@ -32,6 +32,15 @@ pub fn repetitions2(input: &str) -> usize {
     res.values().cloned().max().unwrap_or(0)
 }
 
+pub fn repetitions3(input: &str) -> usize {
+    let input: Vec<char> = input.chars().collect();
+    let mut res = HashMap::new();
+    for c in input {   
+        let _ = *res.entry(c).and_modify(|cnt| *cnt += 1).or_insert(1);
+    }
+    res.values().cloned().max().unwrap_or(0)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -44,5 +53,10 @@ mod tests {
     #[test]
     fn repetitions_test2() {
         assert_eq!(repetitions2("ATTCGGGA"), 3);
+    }
+
+    #[test]
+    fn repetitions_test3() {
+        assert_eq!(repetitions3("ATTCGGGA"), 3);
     }
 }
